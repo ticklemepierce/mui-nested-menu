@@ -33,6 +33,10 @@ export function nestedMenuItemsFromObject({
                     parentMenuOpen={isOpen}
                     sx={sx}
                     disabled={disabled}
+                    onClick={(event: React.MouseEvent<HTMLElement>) => {
+                        handleClose();
+                        callback && callback(event, item);
+                    }}
                 >
                     {/* Call this function to nest more items */}
                     {nestedMenuItemsFromObject({
